@@ -19,6 +19,7 @@ package vm
 import (
 	"fmt"
 	"math/big"
+	"time"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/math"
@@ -32,10 +33,17 @@ var (
 )
 
 func opAdd(pc *uint64, evm *EVM, contract *Contract, memory *Memory, stack *Stack) ([]byte, error) {
+
+	// begin execution time tracking
+	var startTime = time.Now().UnixNano();
+
 	x, y := stack.pop(), stack.pop()
 	stack.push(math.U256(x.Add(x, y)))
 
 	evm.interpreter.intPool.put(y)
+
+	// log ellapsed execution time
+	fmt.Println("execute opAdd consume = ",(time.Now().UnixNano() - startTime))
 
 	return nil, nil
 }
