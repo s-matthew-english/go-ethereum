@@ -1,21 +1,23 @@
-## GoEthe
+# GoEthe
 
 This is a fork of the Ethereum protocol's official golang implementation.
 The purpose of this code base is to provide a framework for testing the effectiveness of the EVM, particularly it has been augmented to track the execution time of individual opcodes.
 
 
-# Commands: 
+## Commands: 
 
 Start with this command:
 
 ```
+make all
+
 ./build/bin/geth datadir=/Users/s.matthew.english/Library/Ethereum/testnet console
 ```
 
 As your node/EVM runs it will generate lots of output text so consider piping the output to a file.
 
 
-# Resources:
+## Resources:
 
 * https://ethereum.stackexchange.com/questions/23638/analysis-of-the-opcodes-used-in-smart-contract-execution-on-ropsten-geth
 
