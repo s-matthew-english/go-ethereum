@@ -11,6 +11,11 @@ Start with this command:
 ```
 make all
 
+./build/bin/geth --testnet datadir=/Users/s.matthew.english/Library/Ethereum/testnet
+```
+do I need this `console` component? 
+
+```
 ./build/bin/geth datadir=/Users/s.matthew.english/Library/Ethereum/testnet console
 ```
 
